@@ -28,12 +28,12 @@ export const CampaignsTableHead = (props: EnhancedTableProps) => {
     },
     {
       id: 'startDate',
-      numeric: false,
+      numeric: true,
       label: 'Start Date',
     },
     {
       id: 'endDate',
-      numeric: false,
+      numeric: true,
       label: 'End Date',
     },
     {

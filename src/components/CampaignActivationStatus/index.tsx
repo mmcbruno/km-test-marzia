@@ -8,13 +8,7 @@ export const CampaignActivationStatus = (props: ActivationStatusProps) => {
   const { startDate, endDate } = props;
   if (startDate.length === 0 || endDate.length === 0) {
     return (
-      <IconButton
-        size='large'
-        edge='start'
-        color='inherit'
-        aria-label='menu'
-        sx={{ mr: 2 }}
-      >
+      <IconButton size='large' edge='start' color='inherit' sx={{ mr: 2 }}>
         <Error color='secondary' />
       </IconButton>
     );
@@ -24,25 +18,15 @@ export const CampaignActivationStatus = (props: ActivationStatusProps) => {
     new Date(startDate) <= currentDate && currentDate <= new Date(endDate);
   if (isActive) {
     return (
-      <IconButton
-        size='large'
-        edge='start'
-        color='inherit'
-        aria-label='menu'
-        sx={{ mr: 2 }}
-      >
-        <ToggleOnSharp color='success' />
-      </IconButton>
+      <>
+        <IconButton size='large' edge='start' color='inherit' sx={{ mr: 2 }}>
+          <ToggleOnSharp color='success' />
+        </IconButton>
+      </>
     );
   }
   return (
-    <IconButton
-      size='large'
-      edge='start'
-      color='inherit'
-      aria-label='menu'
-      sx={{ mr: 2 }}
-    >
+    <IconButton size='large' edge='start' color='inherit' sx={{ mr: 2 }}>
       <ToggleOffSharp color='error' />
     </IconButton>
   );
