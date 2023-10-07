@@ -6,6 +6,7 @@ export interface CampaignState {
   readonly list?: CampaignData[];
   readonly status: string;
   readonly filters: CampaignsFilter;
+  readonly asideDrawerShow: boolean;
 }
 
 export interface CampaignsFilter {

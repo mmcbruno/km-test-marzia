@@ -12,6 +12,7 @@ const initialState: CampaignState = {
     activeSince: undefined,
     activeUntil: undefined,
   },
+  asideDrawerShow: false,
 };
 
 export const loadCampaigns = createAsyncThunk(
@@ -26,7 +27,7 @@ export const campaignsSlice = createSlice({
   name: 'campaigns',
   initialState,
   reducers: {
-    setCampaign: (state, action: PayloadAction<CampaignData[]>) => {
+    setCampaigns: (state, action: PayloadAction<CampaignData[]>) => {
       state.list = action.payload;
     },
     setQuerySearch: (state, action: PayloadAction<string>) => {
@@ -37,6 +38,14 @@ export const campaignsSlice = createSlice({
     },
     setActiveUntilDate: (state, action: PayloadAction<string | undefined>) => {
       state.filters.activeUntil = action.payload;
+    },
+    clearFilters: (state) => {
+      state.filters.activeUntil = undefined;
+      state.filters.activeSince = undefined;
+      state.filters.querySearch = '';
+    },
+    toggleAside: (state, action: PayloadAction<boolean>) => {
+      state.asideDrawerShow = action.payload;
     },
   },
   extraReducers: (builder) => {
@@ -55,12 +64,15 @@ export const campaignsSlice = createSlice({
 });
 
 export const {
-  setCampaign,
+  setCampaigns,
   setQuerySearch,
   setActiveUntilDate,
   setActiveSinceDate,
+  clearFilters,
+  toggleAside,
 } = campaignsSlice.actions;
 
+//selectors with logic
 export const getFilteredCampaigns = (state: RootState) => {
   const { querySearch, activeSince, activeUntil } = state.campaigns.filters;
   const noFiltersSet = querySearch.length === 0 && !activeSince && !activeUntil;
