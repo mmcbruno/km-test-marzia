@@ -11,8 +11,8 @@ export interface CampaignState {
 
 export interface CampaignsFilter {
   readonly querySearch: string;
-  readonly activeSince?: string;
-  readonly activeUntil?: string;
+  readonly activeSince?: string | null;
+  readonly activeUntil?: string | null;
 }
 
 export interface CampaignData {

@@ -33,15 +33,15 @@ export const campaignsSlice = createSlice({
     setQuerySearch: (state, action: PayloadAction<string>) => {
       state.filters.querySearch = action.payload;
     },
-    setActiveSinceDate: (state, action: PayloadAction<string | undefined>) => {
+    setActiveSinceDate: (state, action: PayloadAction<string | null>) => {
       state.filters.activeSince = action.payload;
     },
-    setActiveUntilDate: (state, action: PayloadAction<string | undefined>) => {
+    setActiveUntilDate: (state, action: PayloadAction<string | null>) => {
       state.filters.activeUntil = action.payload;
     },
     clearFilters: (state) => {
-      state.filters.activeUntil = undefined;
-      state.filters.activeSince = undefined;
+      state.filters.activeUntil = null;
+      state.filters.activeSince = null;
       state.filters.querySearch = '';
     },
     toggleAside: (state, action: PayloadAction<boolean>) => {
