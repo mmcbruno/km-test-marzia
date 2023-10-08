@@ -27,8 +27,8 @@ export const campaignsSlice = createSlice({
     name: 'campaigns',
     initialState,
     reducers: {
-        setCampaigns: (state, action: PayloadAction<CampaignData[]>) => {
-            state.list = action.payload;
+        setCampaignsWithTesting: (state, action: PayloadAction<CampaignData[]>) => {
+            state.list = [...action.payload, ...state.list || []];
         },
         setQuerySearch: (state, action: PayloadAction<string>) => {
             state.filters.querySearch = action.payload;
@@ -64,7 +64,7 @@ export const campaignsSlice = createSlice({
 });
 
 export const {
-    setCampaigns,
+    setCampaignsWithTesting,
     setQuerySearch,
     setActiveUntilDate,
     setActiveSinceDate,
