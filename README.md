@@ -1,46 +1,122 @@
-# Getting Started with Create React App
+### My working application can be viewed [here](https://mmcbruno.github.io/km-test-marzia/).
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### The assignee is required to develop a simple React application that displays a list of campaigns that can be filtered by campaign name and date range.
 
-## Available Scripts
+Requirements:
 
-In the project directory, you can run:
+1. Create a public GitHub repository for the application.
+2. Use React and Typescript for the application development.
+3. Feel free to use any libraries or tools during development.
+4. Design the application with production-quality code and styling.
 
-### `npm start`
+### Application Features:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Display a single page with the following elements:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+1. A list of campaigns showing:
 
-### `npm test`
+- Name
+- Start Date
+- End Date
+- Active status (based on whether the current date falls within the start and end date range)
+- Budget (in USD)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+2. A search form above the list to filter campaigns by name.
+3. A date range component for filtering campaigns by start and end dates.
 
-### `npm run build`
+### Ensure that:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Campaigns with start dates within the selected date range are displayed.
+2. Campaigns with end dates within the selected date range are displayed.
+3. End dates cannot be selected before start dates.
+4. Campaigns with end dates before start dates are not displayed.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Design Guidelines:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Use your creativity for the UI design.
+2. Display the campaign list in a table format.
+3. Use a green color palette for active campaigns and a red color palette for inactive campaigns.
 
-### `npm run eject`
+### Testing the Application:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+1. Implement a global method called ‘AddCampaigns’ that accepts an array of campaigns and renders them in the
+   application.
+2. This method will be called from the browser’s JavaScript console for testing purposes.
+3. Ensure the method can be called multiple times, with new campaigns being added to the existing list.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Example of campaign array that can be passed
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+```json
+[
+  {
+    "id": 1,
+    "name": "Divavu",
+    "startDate": "9/19/2017",
+    "endDate": "3/9/2018",
+    "Budget": 88377
+  },
+  {
+    "id": 2,
+    "name": "Jaxspan",
+    "startDate": "11/21/2017",
+    "endDate": "2/21/2018",
+    "Budget": 608715
+  },
+  {
+    "id": 3,
+    "name": "Miboo",
+    "startDate": "11/1/2017",
+    "endDate": "6/20/2017",
+    "Budget": 239507
+  },
+  {
+    "id": 4,
+    "name": "Trilith",
+    "startDate": "8/25/2017",
+    "endDate": "11/30/2017",
+    "Budget": 179838
+  },
+  {
+    "id": 5,
+    "name": "Layo",
+    "startDate": "11/28/2017",
+    "endDate": "3/10/2018",
+    "Budget": 837850
+  },
+  {
+    "id": 6,
+    "name": "Photojam",
+    "startDate": "7/25/2017",
+    "endDate": "6/23/2017",
+    "Budget": 858131
+  },
+  {
+    "id": 7,
+    "name": "Blogtag",
+    "startDate": "6/27/2017",
+    "endDate": "1/15/2018",
+    "Budget": 109078
+  },
+  {
+    "id": 8,
+    "name": "Rhyzio",
+    "startDate": "10/13/2017",
+    "endDate": "1/25/2018",
+    "Budget": 272552
+  },
+  {
+    "id": 9,
+    "name": "Zoomcast",
+    "startDate": "9/6/2017",
+    "endDate": "11/10/2017",
+    "Budget": 301919
+  },
+  {
+    "id": 10,
+    "name": "Realbridge",
+    "startDate": "3/5/2018",
+    "endDate": "10/2/2017",
+    "Budget": 505602
+  }
+]
+```
