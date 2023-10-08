@@ -1,4 +1,4 @@
-import { CampaignData, HeadCell } from './store/types';
+import {CampaignData, HeadCell} from './store/types';
 
 export const campaignsList: CampaignData[] = [
   {
@@ -100,10 +100,12 @@ export const headCells: readonly HeadCell[] = [
   },
 ];
 
-export const checkDate = (
-  cmpDate?: string,
-  comparingDate?: string | null,
-  isStartDate = true
+//this function checks if the date set in the
+//campaign is within the provided one in comparingDate
+export const filterByDate = (
+    cmpDate?: string,
+    comparingDate?: string | null,
+    isStartDate = true
 ) => {
   if (!cmpDate) {
     return false;
@@ -112,6 +114,6 @@ export const checkDate = (
     return true;
   }
   return isStartDate
-    ? new Date(comparingDate) <= new Date(cmpDate)
-    : new Date(comparingDate) >= new Date(cmpDate);
+      ? new Date(comparingDate) <= new Date(cmpDate)
+      : new Date(comparingDate) >= new Date(cmpDate);
 };
