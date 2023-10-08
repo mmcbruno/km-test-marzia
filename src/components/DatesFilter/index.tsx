@@ -36,11 +36,7 @@ export const DatesFilter = () => {
     );
 
     const clearDate = (isEndDate: boolean = false) => {
-        if (isEndDate) {
-            dispatch(setActiveUntilDate(null));
-        } else {
-            dispatch(setActiveSinceDate(null));
-        }
+        dispatch(isEndDate ? setActiveUntilDate(null) : setActiveSinceDate(null));
     };
     return (
         <>
@@ -58,7 +54,10 @@ export const DatesFilter = () => {
                             onChange={onStartDateChange}
                             formatDensity={'dense'}
                             slotProps={{
-                                field: {clearable: true, onClear: () => clearDate(true)},
+                                field: {
+                                    clearable: true,
+                                    onClear: () => clearDate(true),
+                                },
                                 openPickerIcon: {fontSize: 'small'},
                                 openPickerButton: {color: 'primary'},
                                 textField: {
@@ -80,7 +79,10 @@ export const DatesFilter = () => {
                             onChange={onEndDateChange}
                             formatDensity={'dense'}
                             slotProps={{
-                                field: {clearable: true, onClear: () => clearDate(true)},
+                                field: {
+                                    clearable: true,
+                                    onClear: () => clearDate(true),
+                                },
                                 openPickerIcon: {fontSize: 'small'},
                                 openPickerButton: {color: 'primary'},
                                 textField: {

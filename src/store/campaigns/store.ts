@@ -4,10 +4,10 @@ import logger from 'redux-logger';
 
 const enhancers = [applyMiddleware(logger)];
 export const store = configureStore({
-  reducer: {
-    campaigns: campaignsReducer,
-  },
-  enhancers,
+   reducer: {
+      campaigns: campaignsReducer,
+   },
+   enhancers,
 });
 
 export type AppDispatch = typeof store.dispatch;
