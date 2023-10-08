@@ -1,20 +1,19 @@
 import * as React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
 import {
   getFilteredCampaigns,
   loadCampaigns,
   setTestingCampaigns,
 } from '../../store/campaigns/campaignsSlice';
-import { useEffect } from 'react';
-import { CampaignsTable } from '../CampaignsTable';
-import { AppDispatch, store } from '../../store/campaigns/store';
+import {useEffect} from 'react';
+import {CampaignsTable} from '../CampaignsTable';
+import {AppDispatch, store} from '../../store/campaigns/store';
 
 // @ts-ignore
 window.testingList = undefined;
 document.addEventListener('testingListEvent', () => {
   // @ts-ignore
   if (window.testingList) {
-    console.log('test testingList');
     // @ts-ignore
     store.dispatch(setTestingCampaigns(window.testingList));
   }
@@ -26,7 +25,6 @@ window.addCampaigns = function (externalList) {
   window.testingList = [...externalList];
   const event = new CustomEvent('testingListEvent');
   document.dispatchEvent(event);
-  console.log('test');
 };
 
 export const Campaigns = () => {
@@ -39,5 +37,5 @@ export const Campaigns = () => {
     }
   }, [listCampaigns, dispatch]);
 
-  return <CampaignsTable campaigns={listCampaigns || []} />;
+  return <CampaignsTable campaigns={listCampaigns || []}/>;
 };
