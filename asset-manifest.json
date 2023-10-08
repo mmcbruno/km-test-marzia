@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/km-test-marzia/static/css/main.e6c13ad2.css",
+    "main.js": "/km-test-marzia/static/js/main.1c931168.js",
+    "static/js/787.c6d82014.chunk.js": "/km-test-marzia/static/js/787.c6d82014.chunk.js",
+    "index.html": "/km-test-marzia/index.html",
+    "main.e6c13ad2.css.map": "/km-test-marzia/static/css/main.e6c13ad2.css.map",
+    "main.1c931168.js.map": "/km-test-marzia/static/js/main.1c931168.js.map",
+    "787.c6d82014.chunk.js.map": "/km-test-marzia/static/js/787.c6d82014.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.1c931168.js"
+  ]
+}
