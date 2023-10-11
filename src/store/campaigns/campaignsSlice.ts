@@ -62,7 +62,7 @@ export const campaignsSlice = createSlice({
          });
    },
 });
-
+export const campaignsReducer = campaignsSlice.reducer;
 export const {
    setTestingCampaigns,
    setQuerySearch,

@@ -17,9 +17,11 @@ import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 
 export const App = () => {
    const dispatch = useDispatch<AppDispatch>();
+
    const showAside = useSelector(
       (state: RootState) => state.campaigns.asideDrawerShow
    );
+
    const toggle = useCallback(
       (event: React.KeyboardEvent | React.MouseEvent) => {
          if (

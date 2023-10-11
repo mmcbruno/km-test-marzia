@@ -1,5 +1,9 @@
 export type Order = 'asc' | 'desc';
 
+export interface RootState {
+    campaigns: CampaignData;
+}
+
 export interface CampaignState {
     readonly list?: CampaignData[];
     readonly status: string;
