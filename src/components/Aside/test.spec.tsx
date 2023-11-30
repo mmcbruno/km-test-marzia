@@ -8,7 +8,10 @@ import {LocalizationProvider} from '@mui/x-date-pickers/LocalizationProvider';
 import {setupStore} from "../../store/campaigns/store";
 import {testStore} from "../../mockStore";
 
-const mockStore = setupStore(testStore);
+const store = {
+    campaigns: testStore
+}
+const mockStore = setupStore(store);
 
 test('loads items eventually', async () => {
     const {container} = render(
@@ -18,7 +21,6 @@ test('loads items eventually', async () => {
             </Provider>
         </LocalizationProvider>
     );
-    screen.debug();
     expect(screen.getByText("Filter results")).toBeInTheDocument();
     expect(screen.getByText("Start")).toBeInTheDocument();
     expect(screen.queryByRole("input")).toHaveValue("12-05-2023");
