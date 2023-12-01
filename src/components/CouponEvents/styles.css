@@ -1,0 +1,49 @@
+.container {
+    /*Prussian Blue*/
+    background-color: #001041;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.container {
+    color: #000;
+}
+
+.page-header {
+    padding: 8px;
+    height: 56px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.logo {
+    background-image: url("../../../public/brand-logo-landing-white.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 88px;
+    height: 32px;
+}
+
+.header {
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 8px 0;
+}
+
+.header span {
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.header.settings span {
+    text-transform: none;
+    font-size: 14px;
+    text-decoration: underline;
+}
