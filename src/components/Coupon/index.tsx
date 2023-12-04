@@ -6,42 +6,19 @@ import {BottomNavigation, BottomNavigationAction, Chip, Container} from "@mui/ma
 import Paper from "@mui/material/Paper";
 import {AppSettingsAlt, Close, Delete, Home} from "@mui/icons-material";
 import IconButton from "@mui/material/IconButton";
-import {CouponEvents} from "../CouponEvents";
-import {Event, TrendEnum} from "../CouponEvents/types";
+import {CouponEvent} from "../CouponEvents";
+import {CouponStake} from "../CouponStake";
+import {testEvents} from "../../__mocks/events.json"
 
-const testEvents: Event[] = [
-    {
-        eventId: "123456",
-        isLiveEvent: true,
-        teamHome: "Torino FC",
-        teamAway: "Atalanta",
-        marketType: "1X2",
-        marketResult: "Atalanta",
-        odds: 1.75,
-        trend: TrendEnum.DOWN
-    },
-    {
-        eventId: "987654",
-        isLiveEvent: false,
-        teamHome: "Borussia Dortmund",
-        teamAway: "Bayern München",
-        marketType: "Total Goals 2.5",
-        marketResult: "Over (2.5)",
-        odds: 1.20
-    },
-    {
-        eventId: "345678",
-        isLiveEvent: true,
-        teamHome: "Jong PSV Eindhoven",
-        teamAway: "NAC Breda",
-        marketType: "1X2",
-        marketResult: "Jong PSV Eindhoven",
-        odds: 1.9,
-        trend: TrendEnum.UP
-    },
-]
 export const Coupon = () => {
+
     const [value, setValue] = useState(0);
+    const [stake, setStake] = useState(1000);
+
+    const closeBetSlip = (e: React.SyntheticEvent) => {
+        alert(`Close betSlip`);
+    }
+
     return (<div className={"container"}>
         <div className={"page-header"}>
             <div className={"logo"}/>
@@ -59,7 +36,7 @@ export const Coupon = () => {
             >
                 <div className={"header"}>
                     <div><span>BetSlip</span><Chip label="1" sx={{marginLeft: 0.4, height: "16px"}}/></div>
-                    <IconButton sx={{padding: 0}}><Close/></IconButton>
+                    <IconButton sx={{padding: 0}} onClick={closeBetSlip}><Close/></IconButton>
                 </div>
                 <div className={"header settings"}>
                     <IconButton sx={{padding: 0}}><Delete
@@ -75,12 +52,24 @@ export const Coupon = () => {
                         backgroundColor: 'rgba(37,93,189,0.2)',
                         margin: 0,
                         marginTop: 1,
-                        padding: 1
-
+                        padding: 0
                     }}
                 >
-                    <CouponEvents events={testEvents}/>
+                    <Box sx={{padding: 1}}>
+                        {testEvents.map((event) => <CouponEvent key={event.eventId} event={event}/>)}</Box>
+                    <Box
+                        sx={{
+                            borderTopLeftRadius: 8,
+                            borderTopRightRadius: 8,
+                            bgcolor: 'background.default',
+                            paddingTop: 2
+                        }}
+                    >
+                        <CouponStake stake={stake} setStake={setStake} totalOdds={2.75} winnings={9156.39}/>
+
+                    </Box>
                 </Container>
+
 
             </Box>
         </Container>

@@ -1,3 +1,8 @@
+export enum TrendEnum {
+    DOWN = "DOWN",
+    UP = "UP"
+}
+
 export interface Event {
     readonly eventId: string;
     readonly isLiveEvent: boolean;
@@ -9,12 +14,13 @@ export interface Event {
     readonly trend?: TrendEnum;
 }
 
-
 export interface CouponEventProps {
-    events: Event[];
+    event: Event;
 }
 
-export enum TrendEnum {
-    DOWN = "DOWN",
-    UP = "UP"
+export interface StakeProps {
+    readonly  stake: number;
+    readonly  setStake: (value: number) => void;
+    readonly totalOdds?: number
+    readonly winnings?: number
 }
