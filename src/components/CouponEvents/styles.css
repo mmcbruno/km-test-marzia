@@ -1,49 +1,29 @@
-.container {
-    /*Prussian Blue*/
-    background-color: #001041;
+
+.up, .down {
     display: flex;
-    flex-direction: column;
 }
 
+.up::before {
+    content: "";
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 2.5px 5px 2.5px;
+    border-color: transparent transparent #00ff00 transparent;
+    transform: rotate(0deg);
+    margin-top: 6px;
+    margin-right: 6px;
 
-.container {
-    color: #000;
 }
 
-.page-header {
-    padding: 8px;
-    height: 56px;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-}
-
-.logo {
-    background-image: url("../../../public/brand-logo-landing-white.svg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-    width: 88px;
-    height: 32px;
-}
-
-.header {
-    background-color: #fff;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 8px 0;
-}
-
-.header span {
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    font-weight: 400;
-    font-size: 16px;
-}
-
-.header.settings span {
-    text-transform: none;
-    font-size: 14px;
-    text-decoration: underline;
+.down::before {
+    content: "";
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 2.5px 5px 2.5px;
+    border-color: transparent transparent #ff0000 transparent;
+    transform: rotate(180deg);
+    margin-top: 6px;
+    margin-right: 6px;
 }

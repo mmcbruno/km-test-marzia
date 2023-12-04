@@ -13,9 +13,10 @@ const testEvents: Event[] = [
     {
         eventId: "123456",
         isLiveEvent: true,
-        teamHome: "Borussia Dortmund",
-        teamAway: "Bayern München",
+        teamHome: "Torino FC",
+        teamAway: "Atalanta",
         marketType: "1X2",
+        marketResult: "Atalanta",
         odds: 1.75,
         trend: TrendEnum.DOWN
     },
@@ -25,14 +26,16 @@ const testEvents: Event[] = [
         teamHome: "Borussia Dortmund",
         teamAway: "Bayern München",
         marketType: "Total Goals 2.5",
+        marketResult: "Over (2.5)",
         odds: 1.20
     },
     {
         eventId: "345678",
         isLiveEvent: true,
-        teamHome: "Borussia Dortmund",
-        teamAway: "Bayern München",
+        teamHome: "Jong PSV Eindhoven",
+        teamAway: "NAC Breda",
         marketType: "1X2",
+        marketResult: "Jong PSV Eindhoven",
         odds: 1.9,
         trend: TrendEnum.UP
     },
@@ -43,9 +46,9 @@ export const Coupon = () => {
         <div className={"page-header"}>
             <div className={"logo"}/>
         </div>
-        <Container maxWidth="sm" sx={{paddingLeft: 0, paddingRight: 0}}>
+        <Container maxWidth="xl" sx={{paddingLeft: 0, paddingRight: 0}}>
             <Box
-                maxWidth={"sm"}
+                maxWidth={"xl"}
                 sx={{
                     borderTopLeftRadius: 8,
                     borderTopRightRadius: 8,
@@ -55,7 +58,7 @@ export const Coupon = () => {
                 }}
             >
                 <div className={"header"}>
-                    <div><span>BetSlip</span><Chip label="1" sx={{marginLeft: 0.4}}/></div>
+                    <div><span>BetSlip</span><Chip label="1" sx={{marginLeft: 0.4, height: "16px"}}/></div>
                     <IconButton sx={{padding: 0}}><Close/></IconButton>
                 </div>
                 <div className={"header settings"}>

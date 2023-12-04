@@ -4,6 +4,7 @@ export interface Event {
     readonly teamHome: string;
     readonly teamAway: string;
     readonly marketType: string;
+    readonly marketResult: string;
     readonly odds: number;
     readonly trend?: TrendEnum;
 }
