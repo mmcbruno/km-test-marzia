@@ -4,12 +4,15 @@ import Box from "@mui/material/Box";
 import {CouponEventProps, TrendEnum} from "../../types";
 import {Delete} from "@mui/icons-material";
 import IconButton from "@mui/material/IconButton";
+import {Chip} from "@mui/material";
+import AccessTimeIcon from '@mui/icons-material/AccessTime';
 
 export const CouponEvent = (props: CouponEventProps) => {
     const {trend, odds, marketResult, marketType, teamAway, teamHome, isLiveEvent, eventId} = props.event;
     const removeEvent = (e: React.SyntheticEvent) => {
         alert(`Removing event - ${eventId}`)
         e.preventDefault();
+        e.stopPropagation();
     }
     const loadEvent = (e: React.SyntheticEvent) => {
         alert(`Loading event - ${eventId}`)
@@ -34,7 +37,28 @@ export const CouponEvent = (props: CouponEventProps) => {
             flex: "2"
         }}>
             <div>
-                {marketResult}
+                <Box maxWidth="sm" sx={{
+                    fontSize: "14px",
+                    display: "blocks",
+                    color: "#000c2dde"
+                }}>
+                    {isLiveEvent && <Chip size={"small"}
+                                          sx={{
+                                              height: "18px",
+                                              fontSize: "10px",
+                                              marginRight: "3px",
+                                              backgroundColor: "#255dbd",
+                                              color: "#fff"
+                                          }}
+                                          icon={<AccessTimeIcon fontSize={"small"} color={'success'} sx={{
+                                              fontSize: "10px",
+                                              color: "white"
+                                          }}/>}
+                                          label={"LIVE"}
+
+                    />}
+                    {marketResult}
+                </Box>
                 <Box maxWidth="sm" sx={{
                     fontSize: "11px",
                     display: "blocks",

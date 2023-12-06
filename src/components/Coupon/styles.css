@@ -29,14 +29,12 @@
     justify-content: space-between;
     align-items: center;
     padding: 0 8px 0;
-}
-
-.header span {
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    letter-spacing: 1px;
     font-weight: 400;
     font-size: 16px;
 }
+
 
 .header.settings span {
     text-transform: none;

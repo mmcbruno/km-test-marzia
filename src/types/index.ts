@@ -3,6 +3,12 @@ export enum TrendEnum {
     UP = "UP"
 }
 
+export enum BetSlipType {
+    MULTIPLE = "MULTIPLE",
+    SINGLE = "SINGLE",
+    COMBO_BET = "COMBO_BET"
+}
+
 export interface Event {
     readonly eventId: string;
     readonly isLiveEvent: boolean;
@@ -16,6 +22,7 @@ export interface Event {
 
 export interface CouponEventProps {
     event: Event;
+    readonly betSlipType?: BetSlipType;
 }
 
 export interface StakeProps {

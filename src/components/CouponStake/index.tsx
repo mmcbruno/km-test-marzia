@@ -41,20 +41,26 @@ export const CouponStake = (props: StakeProps) => {
             <Box sx={{
                 fontSize: "12px",
                 color: "#000c2d99",
-                flexGrow: 2
+                width: "30%"
             }}>Stake Amount<br/> (Min ₦50)</Box>
             {/*error helperText="Incorrect entry."*/}
             <TextField
                 sx={{
-                    fontSize: "12px",
                     color: "#000c2d99",
-                    textAlign: "right",
-                    maxWidth: "50%"
+                    textAlign: "center",
+                    width: "70%",
+                    // border: "1px solid rgba(0,0,0,.12)",
+                    backgroundColor: "#0010410f",
+                    borderRadius: "8px",
+                    fontWeight: "500",
+                    fontSize: "20px",
                 }}
+                type={"number"}
                 required id="outlined-basic" label="" variant="outlined" size="small" value={stake}
                 onChange={setCurrentStake}
                 InputProps={{
                     sx: {
+                        height: "48px",
                         textAlign: "right",
                         "& input": {
                             textAlign: "right"
